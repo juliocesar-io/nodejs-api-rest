@@ -40,33 +40,32 @@ Representación del estado de transfencia de las lecturas de un sensor.
 
 El cliente WEB desde el panel de administración crea un nuevo envio donde seleciona (Origen, Destino y asocia un camión)
 
-  **Solicitud [POST]  /api/v0.3/envios**
+**Solicitud [POST]  /api/v0.3/envios**
+```json
 
-  	{
-	    	"envio":{
-		        "origen":"Monteria",
-			      "destino",:"Bogota",
-		        "id_camion": "VPC45FL"
-  	}
+"envio":{
+    "origen":"Monteria",
+	"destino":"Bogota",
+	"id_camion": "VPC45FL"
+}
 
+```
 
 El servidor manipula la solicitud asignando un id y  un estado "0" (Los clientes en Andorid buscaran por este), ademas  crea una colección para las notificaciones del envio.
 
  **Respuesta**
 
-    	{
-	    	"envio":{
-		    	"_id": "123",
-		    	"origen":"monteria",
-			    "destino",:"bogota",
-			    "id_camion": "VPC45FL",
-			    "estado": "0",
-		    	"notificaciones":[{
-
-		    		null
-		    	}]
-	    	}
-    	}
+``` json
+    "envio":{
+	       "_id": "123",
+		   "origen":"monteria",
+		   "destino":"bogota",
+		   "id_camion": "VPC45FL",
+		   "estado": "0",
+		         "notificaciones":[{
+		    	  }]
+    }
+```
 
 ### Posibles estados
 
@@ -87,26 +86,24 @@ Cuando el cliente en Android encuentre un envio que tenga _estado_ : 0 y el _id_
 
 **Respuesta**
 
-     {
+``` json
          "envio":{
            "_id": "123",
            "origen":"monteria",
-           "destino",:"bogota",
+           "destino":"bogota",
            "id_camion": "VPC45FL",
            "estado": "1",
            "notificaciones":[{
-
-             null
            }]
          }
-       }
+```
 
 
 El cliente del modulo de administración detectara el cambio de estado del envio que el creo. Posteriormente podra obtener las notificiones para ese envio.
 
 **Solicitud [POST] /api/v0.3/envios/:id/notificaciones/**
 
-		{
+``` json
 			"notificaciones":[
 					{
 					"notificacion":[{
@@ -115,7 +112,7 @@ El cliente del modulo de administración detectara el cambio de estado del envio
 						"lat":"83.5",
 						"long":"120.75",
 						"time":"05:03:20 AM",
-						"date";"05-05-2014"}]
+						"date":"05-05-2014"}]
 					},{
 					"notificacion":[{
 						"temp":"24",
@@ -123,14 +120,13 @@ El cliente del modulo de administración detectara el cambio de estado del envio
 						"lat":"84.5",
 						"long":"120.80",
 						"time":"05:06:30 AM",
-						"date";"05-05-2014"}]  
+						"date":"05-05-2014"}]  
 					},{
 						...
 						...
 					}
 			]
-		}
-
+```
 
 
 
@@ -144,12 +140,12 @@ El cliente del modulo de administración detectara el evento y sabra que el envi
 
 **Solicitud [GET] /api/v0.3/envios/:id/**
 
+``` json
 
-    	{
 	    	"envio":{
 		    	"id": "123",
 		    	"origen":"monteria",
-			    "destino",:"bogota",
+			    "destino":"bogota",
 			    "truck_id": "VPC45FL",
 			    "estado": "2",
 		    	"notificaciones":[{
@@ -158,6 +154,5 @@ El cliente del modulo de administración detectara el evento y sabra que el envi
 		    		...
 		    	}]
 	    	}
-    	}
-
+```
 ***
