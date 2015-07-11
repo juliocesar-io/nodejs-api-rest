@@ -121,9 +121,6 @@ El cliente del modulo de administración detectara el cambio de estado del envio
 						"long":"120.80",
 						"time":"05:06:30 AM",
 						"date":"05-05-2014"}]  
-					},{
-						...
-						...
 					}
 			]
 ```
@@ -149,9 +146,22 @@ El cliente del modulo de administración detectara el evento y sabra que el envi
 			    "truck_id": "VPC45FL",
 			    "estado": "2",
 		    	"notificaciones":[{
-		    		...
-		    		...
-		    		...
+
+                    "notificacion":[{
+                        "temp":"25",
+                        "hum":"15",
+                        "lat":"83.5",
+                        "long":"120.75",
+                        "time":"05:03:20 AM",
+                        "date":"05-05-2014"}]
+                    },{
+                    "notificacion":[{
+                        "temp":"24",
+                        "hum":"16",
+                        "lat":"84.5",
+                        "long":"120.80",
+                        "time":"05:06:30 AM",
+                        "date":"05-05-2014"}]  
 		    	}]
 	    	}
 ```
