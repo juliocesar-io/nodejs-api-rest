@@ -1,7 +1,6 @@
 # Tracking API REST
 ***
-Representación del estado de transfencia de los envios y sus notificiones.
-
+Representación del estado de transfencia de las lecturas de un sensor.
 
 ## Versión 0.3
 ### Novedades
@@ -162,14 +161,3 @@ El cliente del modulo de administración detectara el evento y sabra que el envi
     	}
 
 ***
-
-### Sobre el proyecto
-
-* http://blog.uzi200.me/slides.html
-  _Justificación del proyecto, arquitectura, investigación._
-
-* Repositorio del cliente en Andorid ->
-
-### Contacto
-
-julioc255io@gmail.com
